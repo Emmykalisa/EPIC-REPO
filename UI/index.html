@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EPIC APP</title>
+<!-- Import CSS file -->
+<link rel="stylesheet" href="./css/index_style.css">
+</head>
+<body>
+
+<h2><span>EPIC</span> Login and register</h2>
+<div class="buttons">
+  <button onclick="document.getElementById('login').style.display='block'" style="width:auto;">Login</button>
+
+  <button onclick="document.getElementById('register').style.display='block'" style="width:auto;">Sign Up</button>
+</div>
+
+<!-- Login form  -->
+<div id="login" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="./assets/profile.png" alt="Profile" class="profile">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#" onclick="document.getElementById('reset').style.display='block'" style="width:auto;">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<!-- Rest form -->
+<div id="reset" class="modal" style="background-color:rgba(127, 255, 212, 0.795);">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('reset').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="./assets/profile.png" alt="Profile" class="profile">
+    </div>
+
+    <div class="container">
+      <label for="email"><b>User Email</b></label>
+      <input type="text" placeholder="Enter your email address" name="uname" required>
+        
+      <button type="submit">Submit</button>
+      <p>Password reset link will be sent to your email</p>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('reset').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+<!-- Sign up form -->
+<div id="register" class="modal">
+        <span onclick="document.getElementById('register').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content" action="">
+          <div class="container">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+      
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            
+            <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+      
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('register').style.display='none'" class="cancelbtn2">Cancel</button>
+              <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Import JavaScript file -->
+      <script src="./js/index.js"></script>
+     
+
+</body>
+</html>
