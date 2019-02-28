@@ -1,14 +1,15 @@
 body {
     font-family: 'Mukta', sans-serif;
-	height:100vh;
-	min-height:550px;
+  	height:100vh;
+    min-height:550px;
+    background-color: rgb(250, 246, 246);
     background-image:url(../assets/5.jpg);
     background-repeat: no-repeat;
-	background-size:cover;
+	  background-size:cover;
     background-position:0px 130px;
-    
-	position:relative;
+    position:relative;
     overflow-y: hidden;
+    color: rgb(101, 105, 101)
 }
 
 span{
