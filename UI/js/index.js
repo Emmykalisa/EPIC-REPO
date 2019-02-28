@@ -27,3 +27,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+document.getElementById("submit").onclick=function(){
+  window.location.href="../html/dashboard.html";
+}
