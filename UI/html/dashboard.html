@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design, initial-scale=1">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>APIC Web App | Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard_style.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="header_container">
+        <div id="branding">
+          <h1><span class="highlight">EPIC</span> Web App</h1>
+        </div>
+        <a href="#"><img src="../assets/profile.png"  alt="User profile"></a>
+        <nav>
+          <ul>
+            <!-- <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="current"><a href="services.html">New Group</a></li> -->
+          </ul>
+        </nav>
+        
+      </div>
+    </header>
+
+    <section id="main"">
+      <div class="container">
+          <aside id="sidebar"> 
+            <div class="vertical-menu">
+               <a href="#" class="active" onclick="divVisibility('Compose');">Compose</a>
+               <a href="#" onclick="divVisibility('Inbox');">Inbox</a>
+               <a href="#" onclick="divVisibility('Sent');">Sent</a>
+               <a href="#" onclick="divVisibility('Drafts');">Drafts</a>
+               <a href="#" onclick="divVisibility('Group');">Groups</a>
+               <!-- <a href="#">Groups list</a> -->
+            </div>
+
+
+            
+             
+            </aside>
+        <article id="main-col">
+          <div id="Inbox">Inbox messages will pop up here</div>
+          <div id="Sent" style="display: none;">Sent messages will pop up here</div>
+          <div id="Drafts" style="display: none;">Drafts messages will pop up here</div>
+          <div id="Group" style="display: none;">Group messages will pop up here and be able to send message too to the group</div>
+          <div id="Compose" style="display: none; overflow:auto;">
+              <form class="email">
+                <div>To</div>
+                <input type="email" name="email" placeholder="Receiver email" />
+                <div>Subject</div>
+                <input type="text" name="subject" placeholder="Subject!!!"/>
+            
+                <div>Message</div>
+                <textarea name="body" placeholder="Message!!!"></textarea>
+            
+                <br/>
+                <input type="submit" value="Send" />
+            </form>
+          </div>
+        </article>
+
+      </div>
+      <button class="open-button" onclick="openForm()"><b>Create New Group</b></button>
+
+      <div class="form-popup" id="myForm">
+         <form action="/action_page.php" class="form-container">
+            <h1>Group Creation</h1>
+
+            <!-- <label for="email"><b>Group Name</b></label> -->
+            <input type="text" placeholder="Enter The Group Name" name="group_name" required>
+
+            <button type="submit" class="btn"><b>Create</b></button>
+            <button type="button" class="btn cancel" onclick="closeForm()"><b>Close</b></button>
+            </form>
+      </div>
+    </section>
+  
+
+    <footer>
+      <p>EPIC Web App for Emmanuel KALISA, Copyright &copy; 2019</p>
+    </footer>
+
+    <script src="../js/dashboard.js"></script>
+
+  </body>
+</html>
