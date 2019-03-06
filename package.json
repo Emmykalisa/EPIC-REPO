@@ -1,0 +1,44 @@
+{
+  "name": "epicmail",
+  "version": "1.0.0",
+  "description": "Mail App",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require babel-register server/tests",
+    "build": "babel server --out-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emmykalisa/EPICmail.git"
+  },
+  "author": "Emmanuel KALISA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emmykalisa/EPICmail/issues"
+  },
+  "homepage": "https://github.com/Emmykalisa/EPICmail#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/register": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babel-watch": "^7.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.15.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2"
+  },
+  "dependencies": {
+    "async": "^2.6.2",
+    "chai-http": "^4.2.1",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "moment": "^2.24.0",
+    "uuid": "^3.3.2"
+  }
+}
