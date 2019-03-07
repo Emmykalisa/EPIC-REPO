@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --require babel-register server/tests",
     "build": "babel server --out-dir build",
-    "start": "node server.js"
+    "start": "node build/server.js"
   },
   "repository": {
     "type": "git",
@@ -41,5 +41,9 @@
     "express-validator": "^5.3.1",
     "moment": "^2.24.0",
     "uuid": "^3.3.2"
+  },
+  "engines":{
+    "node": "8.10.0",
+    "npm": "6.5.0"
   }
 }
