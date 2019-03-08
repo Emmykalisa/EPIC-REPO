@@ -1,4 +1,9 @@
-language:node_js
-node_js:
-- "stable"
-script:npm test
+language: node_js
+node_js: 
+  - "stable"
+cache:
+  directories:
+    - "node_modules"
+after_success: npm run coverage
+
+repo_token: Jesyj8xP4dgitVmRcmhsftSIG4H6hmKHv
