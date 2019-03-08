@@ -4,3 +4,7 @@ node_js:
 cache:
   directories:
     - "node_modules"
+after_success: npm run coverage
+# addons:
+#   code_climate:
+#       repo_token: <4c142bf18a0628592069f66491819ed53abd8a0ba556802a21e7b45b34d933a0>
