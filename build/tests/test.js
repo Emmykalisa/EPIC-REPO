@@ -25,7 +25,6 @@ describe('/Get messages', function () {
     _chai2.default.request(_server2.default).get('/api/v1/messages').end(function (err, res) {
       res.should.have.status(200);
       res.body.should.be.a('array');
-      // res.body.length.should.be.eql(0);
       done();
     });
   });

@@ -16,7 +16,7 @@ router.post('/messages', _Message2.default.create);
 router.get('/messages', _Message2.default.getAll);
 router.get('/messages/unread', _Message2.default.getUnread);
 router.get('/messages/sent', _Message2.default.getSent);
-router.get('/messages/unread', _Message2.default.getOne);
+// router.get('/messages/unread', Message.getOne);
 router.delete('/messages/:id', _Message2.default.delete);
 
 module.exports = router;
