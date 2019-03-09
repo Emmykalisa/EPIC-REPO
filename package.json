@@ -4,10 +4,9 @@
   "description": "Mail App",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/nyc --require babel-register --all mocha server/tests",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "build": "babel server --out-dir build",
-    "start": "node build/server.js"
+    "start": "babel-watch server/server.js",
+    "test": "nyc  mocha server/tests/*.js --require @babel/register --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -34,9 +33,8 @@
     "eslint": "^5.15.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "mocha": "^6.0.2",
-    "mocha-lcov-reporter": "^1.3.0"
-  },
+    "mocha": "^6.0.2"
+ },
   "dependencies": {
     "async": "^2.6.2",
     "blanket": "^1.2.3",
