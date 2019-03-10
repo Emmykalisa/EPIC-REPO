@@ -9,22 +9,30 @@ class Message {
    */
   constructor() {
     this.messages = [
-        {
-            "id": "ae0f724b-8f6d-4234-877a-1848ca412f41",
-            "subject": "Hi",
-            "message": "cn ufjv dk",
-            "parentMessageId": "KALISA",
-            "status": "Unread",
-            "createdOn": 1551871527723
-        },
-        {
-            "id": "d1081ada-49d5-4a0a-b97e-e10b85ba68eb",
-            "subject": "Test",
-            "message": "I will came",
-            "parentMessageId": "344",
-            "status": "Sent",
-            "createdOn": 1551871605364
-        }
+      {
+        "id": "d1081ada-49d5-4a0a-b97e-e10b85ba68eb",
+        "subject": "Test",
+        "message": "I will came",
+        "parentMessageId": "344",
+        "status": "Sent",
+        "createdOn": 1551871605364
+    },
+    {
+        "id": "65262e7b-0143-486d-b735-630e2fb64396",
+        "subject": "Test2",
+        "message": "I will came tomorrow",
+        "parentMessageId": "556665665",
+        "status": "Sent",
+        "createdOn": 1552243675280
+    },
+    {
+        "id": "f3de91e9-bc4b-48fb-9670-67f38dce8eec",
+        "subject": "BootCamp",
+        "message": "Tomorrow will be a boot camp of andela",
+        "parentMessageId": "556665665",
+        "status": "Sent",
+        "createdOn": 1552243727849
+    }
     ]
   }
   /**
