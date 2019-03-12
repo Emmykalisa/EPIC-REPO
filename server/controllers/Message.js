@@ -9,10 +9,11 @@ const Message = {
    */
   create(req, res) {
     if (!req.body.subject && !req.body.message && !req.body.parentMessageId && !req.body.status) {
+     
       return res.status(400).send({'message': 'All fields are required'})
     }
     const message = MessageModel.create(req.body);
-    return res.status(200).send(message);
+    return res.status(201).send(message);
   },
   /**
    * 

@@ -44,3 +44,28 @@ describe('/Get Sent messages', () => {
 });
 
 
+describe('/Post message', () => {
+  it('it should Created messages', (done) => {
+    chai.request(server)
+        .post('/api/v1/messages')
+        .send({subject:'bbnvfjnvnjd', message:'bvfbv fnv jf', parentMessageId:445455, status:'Sent'})
+        .end((err, res) => {
+              res.should.have.status(201);
+              res.body.should.be.a('object');
+          done();
+        });
+  });
+});
+
+describe('/Delete message', () => {
+  it('it should DElete messages', (done) => {
+    chai.request(server)
+        .delete('/api/v1/messages/f3de91e9-bc4b-48fb-9670-67f38dce8eec')
+        .end((err, res) => {
+              res.should.have.status(200);
+              res.body.should.be.a('object');
+          done();
+        });
+  });
+});
+
