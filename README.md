@@ -3,6 +3,9 @@ EPIC platform helps people exchange messages/information over the internet.
 
 [![Coverage Status](https://coveralls.io/repos/github/Emmykalisa/EPICmail/badge.svg?branch=develop)](https://coveralls.io/github/Emmykalisa/EPICmail?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/83837a4b4e2fe5a6de2a/maintainability)](https://codeclimate.com/github/Emmykalisa/EPICmail/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/83837a4b4e2fe5a6de2a/test_coverage)](https://codeclimate.com/github/Emmykalisa/EPICmail/test_coverage)
+[![Build Status](https://travis-ci.com/Emmykalisa/EPICmail.svg?branch=develop)](https://travis-ci.com/Emmykalisa/EPICmail)
+
 
 
 ## Technologies
