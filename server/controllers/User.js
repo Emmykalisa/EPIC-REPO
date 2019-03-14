@@ -35,7 +35,8 @@ const User = {
 
     UserModel.signUser(user_info, (err, user)=>{
       if(err) return res.status(404).json({status:404,message: err});
-      if(!user) return res.status(400).json({status:400,message: 'NO user found'});
+      if(!user) return res.status(400).json({status:400,message: 'No user found'});
+      req.session.user = user;
       res.status(200).json({status:200,message:'Login successful',data:user});
     })
   }

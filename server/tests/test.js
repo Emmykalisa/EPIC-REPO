@@ -14,7 +14,7 @@ chai.should();
           .get('/api/v1/messages')
           .end((err, res) => {
                 res.should.have.status(200);
-                res.body.should.be.a('array');
+                res.body.should.be.a('object');
             done();
           });
     });
@@ -26,7 +26,7 @@ describe('/Get Unread messages', () => {
         .get('/api/v1/messages/unread')
         .end((err, res) => {
               res.should.have.status(200);
-              res.body.should.be.a('array');
+              res.body.should.be.a('object');
           done();
         });
   });
@@ -82,7 +82,7 @@ describe('/Delete message', () => {
   });
 });
 
-//SignUp Test
+//SignUp and Signin Test
 
 describe('/Get All Users', () => {
   it('it should GET all users', (done) => {
@@ -100,7 +100,7 @@ describe('/SignUp', () => {
   it('it should Created User', (done) => {
     chai.request(server)
         .post('/api/v1/signup')
-        .send({email:'emmykalisa8@gmail.com', firstName:'Emmanuel', lastName:'KALISA', password:'emmy'})
+        .send({email:'emmykalisa8@gmail.com', firstName:'Emmanuel', lastName:'KALISA', password:'kalisa'})
         .end((err, res) => {
               res.should.have.status(201);
               res.body.should.be.a('object');
@@ -108,3 +108,4 @@ describe('/SignUp', () => {
         });
   });
 });
+

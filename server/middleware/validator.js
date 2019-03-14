@@ -1,3 +1,4 @@
+
 exports.allmessages = (req, res, next) => {
 	req.assert('subject', 'Please provide subject').notEmpty();
     req.assert('message', 'Please provide message').notEmpty();
@@ -19,5 +20,10 @@ exports.signupvali = (req, res, next) => {
 	const errors = req.validationErrors();
 	if (errors) return res.status(400).json({status: 400, error: errors[0].msg});
 
+	return next();
+};
+
+exports.isLoggedIn = (req, res, next) => {
+	if(!req.session.user) return res.status(401).send({status:401,message:'Sorry you are not authenticated'})
 	return next();
 };

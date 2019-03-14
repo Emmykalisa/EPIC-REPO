@@ -14,7 +14,8 @@ class Message {
         "subject":"Test",
         "message":"I will came",
         "parentMessageId":"344",
-        "status":"Sent",
+        "email":"evode@gmail.com",
+        "status":"Unread",
         "createdOn":1551871605364
       },
       {
@@ -22,6 +23,7 @@ class Message {
         "subject":"Test2",
         "message":"I will came tomorrow",
         "parentMessageId":"556665665",
+        "email":"emmykalisa8@gmail.com",
         "status":"Sent",
         "createdOn":1552243675280
       },
@@ -30,7 +32,8 @@ class Message {
         "subject":"BootCamp",
         "message":"Tomorrow will be a boot camp of andela",
         "parentMessageId":"556665665",
-        "status":"Sent",
+        "email":"emmykalisa8@gmail.com",
+        "status":"Unread",
         "createdOn":1552243727849
       }
       ]
@@ -45,9 +48,10 @@ class Message {
       id: uuid.v4(),
       subject: data.subject || '',
       message: data.message || '',
+      email: data.email ||'',
       parentMessageId: data.parentMessageId || '',
       status: data.status || '',
-      createdOn: moment()
+      createdOn: moment().toDate()
     };
     this.messages.push(newMessage);
     return newMessage
@@ -60,10 +64,10 @@ class Message {
   findOne(id) {
     return this.messages.find(mess => mess.id === id);
   }
-  findMessages(status){
+  findMessages(status,email){
       let readMsgs = [];
       async.eachSeries(this.messages, (current, cb)=>{
-          if(current.status==status) readMsgs.push(current);
+          if(current.status==status && current.email==email ) readMsgs.push(current);
           cb(null);
       },(err)=>{
 
@@ -73,8 +77,15 @@ class Message {
   /**
    * @returns {object} returns all messages
    */
-  findAll() {
-    return this.messages;
+  findAll(email) {
+    let readMsgs = [];
+      async.eachSeries(this.messages, (current, cb)=>{
+          if(current.email==email ) readMsgs.push(current);
+          cb(null);
+      },(err)=>{
+
+      })
+      return readMsgs;
   }
   
   /**

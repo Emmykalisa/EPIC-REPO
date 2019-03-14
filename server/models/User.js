@@ -8,7 +8,15 @@ class User {
    * @param {object} data
    */
   constructor() {
-    this.users = [];
+    this.users = [
+      {
+        "id": "c2097163-7122-4ba3-8792-79bd13bb906f",
+        "email": "emmykalisa8@gmail.com",
+        "firstName": "Emmy",
+        "lastName": "KALISA",
+        "password": "kalisa"
+    }
+    ];
   }
   /**
    * 
