@@ -47,7 +47,7 @@ class Message {
       message: data.message || '',
       parentMessageId: data.parentMessageId || '',
       status: data.status || '',
-      createdOn: moment.now()
+      createdOn: moment()
     };
     this.messages.push(newMessage);
     return newMessage

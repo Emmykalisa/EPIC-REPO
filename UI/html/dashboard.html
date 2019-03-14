@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design, initial-scale=1">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>APIC Web App | Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard_style.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="header_container">
+        <div id="branding">
+          <h1><span class="highlight">EPIC</span> Web App</h1>
+        </div>
+        <a href="#"><img src="../assets/profile.png"  alt="User profile"></a>
+        <nav>
+          <ul>
+            <!-- <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="current"><a href="services.html">New Group</a></li> -->
+          </ul>
+        </nav>
+        
+      </div>
+    </header>
+
+    <section id="main"">
+      <div class="container">
+          <aside id="sidebar"> 
+            <div class="vertical-menu">
+               <a href="#" class="active" onclick="divVisibility('Compose');">Compose</a>
+               <a href="#" onclick="divVisibility('Inbox');">Inbox</a>
+               <a href="#" onclick="divVisibility('Sent');">Sent</a>
+               <a href="#" onclick="divVisibility('Drafts');">Drafts</a>
+               <a href="#" onclick="openForm()">Create Group</a>
+               <a href="#" onclick="divVisibility('Group');">Group1</a>
+               <!-- <a href="#">Groups list</a> -->
+            </div>
+
+
+            
+             
+            </aside>
+        <article id="main-col">
+          <div id="Inbox">
+            <table id="inbox">
+              <tr>
+                <td>Alfreds</td>
+                <td>When I was in university year one to year two, I did programmi....</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Emmy</td>
+                <td>On my side growth mindset is a belief someone has......</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Evode</td>
+                <td>When I was in university year one to year two, I did programmi....</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Jeannette</td>
+                <td>On my side growth mindset is a belief someone has......</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Joseph</td>
+                <td>When I was in university year one to year two, I did programmi....</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Jean Paul</td>
+                <td>On my side growth mindset is a belief someone has......</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Vestine</td>
+                <td>When I was in university year one to year two, I did programmi....</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Al Soudi</td>
+                <td>On my side growth mindset is a belief someone has......</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Kalisa</td>
+                <td>When I was in university year one to year two, I did programmi....</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Ntirenganya</td>
+                <td>On my side growth mindset is a belief someone has......</td>
+                <td>
+                <button type="button" id="View" onclick="divVisibility('MessageView');">View</button>
+                <button type="button" id="Delete">Delete</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="Sent" style="display: none;">
+              <table id="inbox">
+                  <tr>
+                    <td>Alfreds</td>
+                    <td>When I was in university year one to year two, I did programmi.......</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('Retract');">View</button>
+                    <button type="button" id="Delete">Retract</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Emmy</td>
+                    <td>On my side growth mindset is a belief someone has......</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('Retract');">View</button>
+                    <button type="button" id="Delete">Retract</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Evode</td>
+                    <td>When I was in university year one to year two, I did programmi....</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('Retract');">View</button>
+                    <button type="button" id="Delete">Retract</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Jeannette</td>
+                    <td>On my side growth mindset is a belief someone has......</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('Retract');">View</button>
+                    <button type="button" id="Delete">Retract</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Joseph</td>
+                    <td>When I was in university year one to year two, I did programmi....</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('Retract');">View</button>
+                    <button type="button" id="Delete">Retract</button>
+                    </td>
+                  </tr>
+                  </tr>
+                </table>
+          </div>
+
+          <div id="Drafts" style="display: none;">
+              <table id="inbox">
+                  <tr>
+                    <td>Alfreds</td>
+                    <td>When I was in university year one to year two, I did programmi.................</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('DraftView');">View</button>
+                    <!-- <button type="button" id="Delete">Delete</button> -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Emmy</td>
+                    <td>On my side growth mindset is a belief someone has......</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('DraftView');">View</button>
+                    <!-- <button type="button" id="Delete">Delete</button> -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Evode</td>
+                    <td>When I was in university year one to year two, I did programmi....</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('DraftView');">View</button>
+                    <!-- <button type="button" id="Delete">Delete</button> -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Jeannette</td>
+                    <td>On my side growth mindset is a belief someone has......</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('DraftView');">View</button>
+                    <!-- <button type="button" id="Delete">Delete</button> -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Joseph</td>
+                    <td>When I was in university year one to year two, I did programmi....</td>
+                    <td>
+                    <button type="button" id="View" onclick="divVisibility('DraftView');">View</button>
+                    <!-- <button type="button" id="Delete">Delete</button> -->
+                    </td>
+                  </tr>
+                  </tr>
+                </table>
+          </div>
+          
+          <div id="Group" style="display: none;">
+            <label>New Member</label>
+            <input type="text" placeholder="Member email" id="createem">
+            <input type="button" value="Insert" id="createbu"><br><br>
+            <table>
+                <tr>
+                    <td><div id="listofmember">
+                          <b>Emmanuel</b><br><br>
+                          <b>Charles</b><br><br>
+                          <b>Joseph</b><br><br>
+                          <b>Karim</b><br><br>
+                          <b>Muhire</b>
+                        </div>
+                    </td>
+                    <td><div id="sent_receivechart">
+                      <div id="sentchart">
+                          <span><i>from Emmanuel</i></span><br>
+                          <p>I was in university year one to year two, 
+                             I did programming courses as to </p> 
+                             
+                      </div>
+                      <div id="receivechart">
+                          <span><i>from you</i></span><br>
+                        <p>
+                            When I was in university year one to year two, 
+                            I did programming courses as to get the pass and be able 
+                        </p>
+                        
+                        
+                      </div>
+
+
+                     <div id="writingmessage">
+                                      <textarea id="messagetxt"></textarea>
+                                      <input type="submit" value="Send" id="sendmessage">
+                                    </div>
+
+                    </div>
+                    </td>
+                 </tr>
+            </table>
+          </div>
+         
+          <div id="Compose" style="display: none; overflow:auto;">
+              <form class="email">
+                <div>To</div>
+                <input type="email" name="email" placeholder="Receiver email" />
+                <div>Subject</div>
+                <input type="text" name="subject" placeholder="Subject!!!"/>
+            
+                <div>Message</div>
+                <textarea name="body" placeholder="Message!!!"></textarea>
+            
+                <br/>
+                  <button type="button" id="View" >Send</button>
+                  <button type="button" id="Delete">Save</button>
+            </form>
+          </div>
+
+          <div id="MessageView" style="display: none;">
+            <b>Emmanuelkalisa</b> emmykalisa8@gmail.com<br>
+            <b>to</b> me
+            <p id="pmessage">
+                When I was in university year one to year two, 
+                I did programming courses as to get the pass and be able to move to the next level, 
+                I was thinking that programming is for people who studied out of our country because before 
+                we knew that we can not do programming unless we studied into international universities.
+                It means that I had a fixed mindset because of the belief I had from my society, 
+                after reaching in year three(third year) I started learning with more effort b
+                ecause of my big brother who advised me to not use lecturer sources only and also to use another 
+                sources like youtube, w3schools etc so that I can become a software developer because 
+                he knew that I have been liked it so much.
+
+            </p>
+          </div>
+
+          <div id="DraftView" style="display: none;">
+              <form class="email">
+                  <div>To</div>
+                  <input type="email" name="email" value="emmykalisa8@gmail.com" />
+                  <div>Subject</div>
+                  <input type="text" name="subject" value="Growth Mindset!!!"/>
+              
+                  <div>Message</div>
+                  <textarea name="body" placeholder="">When I was in university year one to year two, I did programming courses as to get the pass and be able to move to the next level, I was thinking that programming is for people who studied out of our country because before we knew that we can not do programming unless we studied into international universities. It means that I had a fixed mindset because of the belief I had from my society, after reaching in year three(third year) I started learning with more effort because of my big brother who advised me to not use lecturer sources only and also to use another sources like youtube, w3schools etc so that I can become a software developer because he knew that I have been liked it so much.
+                  </textarea>
+              
+                  <br/>
+                  <button type="button" id="View" >Send</button>
+                  <button type="button" id="Delete">Save</button>
+                  <button type="button" id="Delete">Delete</button>
+              </form>
+          </div>
+
+          <div id="Retract" style="display: none;">
+              <form class="email">
+                  <div>To</div>
+                  <input type="email" name="email" value="emmykalisa8@gmail.com" />
+                  <div>Subject</div>
+                  <input type="text" name="subject" value="Growth Mindset!!!"/>
+              
+                  <div>Message</div>
+                  <textarea name="body" placeholder="">When I was in university year one to year two, I did programming courses as to get the pass and be able to move to the next level, I was thinking that programming is for people who studied out of our country because before we knew that we can not do programming unless we studied into international universities. It means that I had a fixed mindset because of the belief I had from my society, after reaching in year three(third year) I started learning with more effort because of my big brother who advised me to not use lecturer sources only and also to use another sources like youtube, w3schools etc so that I can become a software developer because he knew that I have been liked it so much.
+                  </textarea>
+              
+                  <br/>
+                  <button type="button" id="View" >Send</button>
+                  <button type="button" id="Delete">Retract</button>
+              </form>
+          </div>
+
+        </article>
+
+      </div>
+      <!-- <button class="open-button" onclick="openForm()"><b>Create New Group</b></button> -->
+
+      <div class="form-popup" id="myForm">
+         <form action="/action_page.php" class="form-container">
+            <h1>Create Group</h1>
+
+            <!-- <label for="email"><b>Group Name</b></label> -->
+            <input type="text" placeholder="Enter The Group Name" name="group_name" required>
+
+            <button type="submit" class="btn"><b>Create</b></button>
+            <button type="button" class="btn cancel" onclick="closeForm()"><b>Close</b></button>
+            </form>
+      </div>
+    </section>
+  
+
+    <footer>
+      <p>EPIC Web App for Emmanuel KALISA, Copyright &copy; 2019</p>
+    </footer>
+
+    <script src="../js/dashboard.js"></script>
+
+  </body>
+</html>

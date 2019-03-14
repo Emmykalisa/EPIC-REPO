@@ -8,10 +8,10 @@ const Message = {
    * @returns {object} message object 
    */
   create(req, res) {
-    if (!req.body.subject && !req.body.message && !req.body.parentMessageId && !req.body.status) {
+    // if (!req.body.subject && !req.body.message && !req.body.parentMessageId && !req.body.status) {
      
-      return res.status(400).send({'message': 'All fields are required'})
-    }
+    //   return res.status(400).send({'message': 'All fields are required'})
+    // }
     const message = MessageModel.create(req.body);
     return res.status(201).send(message);
   },
@@ -23,7 +23,7 @@ const Message = {
    */
   getAll(req, res) {
     const messages = MessageModel.findAll();
-    return res.status(200).send(messages);
+    return res.status(200).json({status:200,message:'Something',data:messages});
   },
   /**
    * 
@@ -73,7 +73,7 @@ const Message = {
   delete(req, res) {
     const message = MessageModel.findOne(req.params.id);
     if (!message) {
-      return res.status(400).send({'message': 'message not found'});
+      return res.status(404).send({'message': 'message not found'});
     }
     const mes = MessageModel.delete(req.params.id);
     return res.status(200).send(mes);

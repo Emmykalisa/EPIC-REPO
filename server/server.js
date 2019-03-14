@@ -2,17 +2,26 @@
 import express from 'express';
 import User from './routes/User';
 import Message from './routes/Message';
+import expressValidator from 'express-validator';
 
 const app = express()
 
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  return res.status(200).send({'message': 'YAY! Congratulations! Your first endpoint is working'});
+  return res.status(200).send({'message': 'Congz, your host was done, add you API to view your data'});
 })
+app.use(expressValidator());
 
 app.use('/api/v1', User);
 app.use('/api/v1', Message);
+app.all('*', (req, res) => {
+	return res.status(404).json({ 
+		status: 404,
+		error: 'Invalid route' 
+	});
+});
+
 let port = process.env.PORT||3000;
 
 var server = app.listen(port, function () {

@@ -1,5 +1,6 @@
 import moment from 'moment';
 import uuid from 'uuid';
+import async from 'async';
 
 class User {
   /**
@@ -18,18 +19,11 @@ class User {
       id: uuid.v4(),
       email: data.email || '',
       firstName: data.firstName || '',
-      lastName: data.lastName || ''
+      lastName: data.lastName || '',
+      password: data.password || ''
     };
     this.users.push(newUser);
     return newUser
-  }
-  /**
-   * 
-   * @param {uuid} id
-   * @returns {object} user object
-   */
-  findOne(id) {
-    return this.users.find(reflect => reflect.id === id);
   }
   /**
    * @returns {object} returns all users
@@ -38,27 +32,22 @@ class User {
     return this.users;
   }
   /**
-   * 
-   * @param {uuid} id
-   * @param {object} data 
+   * Sign in user
+   * with email and password
    */
-  update(id, data) {
-    const user = this.findOne(id);
-    const index = this.users.indexOf(user);
-    this.users[index].email = data['email'] || user.email;
-    this.users[index].firstName = data['firstName'] || user.firstName;
-    this.users[index].lastName = data['lastName'] || user.lastName
-    return this.users[index];
-  }
-  /**
-   * 
-   * @param {uuid} id 
-   */
-  delete(id) {
-    const user = this.findOne(id);
-    const index = this.users.indexOf(user);
-    this.users.splice(index, 1);
-    return {};
+  signUser(info, userCallBack){
+    let email = info.email;
+    let password = info.password;
+    let user;
+    async.eachSeries(this.users, (currentUser, callBack)=>{
+      if(currentUser.email != email) return callBack('Email not found');
+      else if(currentUser.password != password) return callBack('Password not found');
+      else if(currentUser.email != email&&currentUser.password != password) return callBack('Password and email are not matching');
+      user = currentUser;
+      return callBack(null);
+    },(err)=>{
+      return userCallBack(err, user);
+    })
   }
 }
 export default new User();
