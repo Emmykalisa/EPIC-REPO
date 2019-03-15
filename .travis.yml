@@ -8,4 +8,6 @@ cache:
 after_success: npm run coverage
 notification:
   email:false
+
+  repo_token: 3lyXTX0vslxACIMtMDQG7H4GivSFfPgRt
   

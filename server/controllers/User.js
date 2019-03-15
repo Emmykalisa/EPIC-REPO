@@ -24,46 +24,21 @@ const User = {
     const users = UserModel.findAll();
     return res.status(200).send(users);
   },
-  /**
-   * 
-   * @param {object} req 
-   * @param {object} res
-   * @returns {object} user object
-   */
-  getOne(req, res) {
-    const user = UserModel.findOne(req.params.id);
-    if (!user) {
-      return res.status(404).send({'message': 'user not found'});
-    }
-    return res.status(200).send(user);
-  },
-  /**
-   * 
-   * @param {object} req 
-   * @param {object} res 
-   * @returns {object} updated user
-   */
-  update(req, res) {
-    const user = UserModel.findOne(req.params.id);
-    if (!user) {
-      return res.status(404).send({'message': 'user not found'});
-    }
-    const updatedUser = UserModel.update(req.params.id, req.body)
-    return res.status(200).send(updatedUser);
-  },
-  /**
-   * 
-   * @param {object} req 
-   * @param {object} res 
-   * @returns {void} return statuc code 204 
-   */
-  delete(req, res) {
-    const user = UserModel.findOne(req.params.id);
-    if (!user) {
-      return res.status(404).send({'message': 'user not found'});
-    }
-    const us = UserModel.delete(req.params.id);
-    return res.status(204).send(us);
+
+  loginUser(req, res){
+    req.assert('email', 'Enter your email').notEmpty();
+    req.assert('password', 'Enter your password').notEmpty();
+    let errors = req.validationErrors();
+    if(errors) return res.status(400).json({status:400,message: errors[0] });
+
+    let user_info = {email:req.body.email, password:req.body.password};
+
+    UserModel.signUser(user_info, (err, user)=>{
+      if(err) return res.status(404).json({status:404,message: err});
+      if(!user) return res.status(400).json({status:400,message: 'No user found'});
+      req.session.user = user;
+      res.status(200).json({status:200,message:'Login successful',data:user});
+    })
   }
 }
 

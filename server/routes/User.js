@@ -1,11 +1,10 @@
 import express from 'express';
 import User from '../controllers/User';
+import validator from '../middleware/validator';
 const router = express.Router();
 
-router.post('/signup', User.create);
+router.post('/signup', validator.signupvali , User.create);
+router.post('/signin', User.loginUser);
 router.get('/users', User.getAll);
-router.get('/users/:id', User.getOne);
-router.put('/users/:id', User.update);
-router.delete('/users/:id', User.delete);
 
 module.exports = router;
